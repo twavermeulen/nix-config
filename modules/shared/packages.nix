@@ -2,7 +2,8 @@
 
 with pkgs; [
   # General packages for development and system management
-
+  kitty
+  
   # Encryption and security tools
 
   # Cloud-related tools and SDKs
@@ -16,6 +17,8 @@ with pkgs; [
 
 
   # Text and terminal utilities
+  starship
+  nerd-fonts.jetbrains-mono
 
   # Python packages
 
