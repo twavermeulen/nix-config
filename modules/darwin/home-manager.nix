@@ -71,7 +71,6 @@ in
     username = user;
     entries = [
       { path = "/Applications/Safari.app/"; }
-      { path = "/System/Applications/Notes.app/"; }
       { path = "/System/Applications/System Settings.app/"; }
     ];
   };
