@@ -1,8 +1,5 @@
 { config, pkgs, ... }:
 
-let
-  emacsOverlaySha256 = "0y1qpamif6drr0f5152fyd0lh3ghi9w56amy6imsjcwqq6z9djna";
-in
 {
 
   nixpkgs = {
@@ -19,11 +16,6 @@ in
       map (n: import (path + ("/" + n)))
           (filter (n: match ".*\\.nix" n != null ||
                       pathExists (path + ("/" + n + "/default.nix")))
-                  (attrNames (readDir path)))
-
-      ++ [(import (builtins.fetchTarball {
-               url = "https://github.com/nix-community/emacs-overlay/archive/refs/heads/master.tar.gz";
-               sha256 = emacsOverlaySha256;
-           }))];
+                  (attrNames (readDir path)));
   };
 }

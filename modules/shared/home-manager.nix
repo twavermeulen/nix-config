@@ -18,14 +18,13 @@ in
   starship = {
     enable = true;
     enableZshIntegration = true;
-    settings = builtins.fromTOML (builtins.readFile ./config/starship.toml);
   };
 
   zsh = {
     enable = true;
     autocd = false;
     plugins = [ ];
-    initExtraFirst = ''
+    initContent = lib.mkBefore ''
       if [[ -f /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]]; then
         . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
         . /nix/var/nix/profiles/default/etc/profile.d/nix.sh
@@ -38,15 +37,6 @@ in
 
       # Remove history data we don't want to see
       export HISTIGNORE="pwd:ls:cd"
-
-      # Emacs is my editor
-      export ALTERNATE_EDITOR=""
-      export EDITOR="emacsclient -t"
-      export VISUAL="emacsclient -c -a emacs"
-
-      e() {
-          emacsclient -t "$@"
-      }
 
       # nix shortcuts
       shell() {
