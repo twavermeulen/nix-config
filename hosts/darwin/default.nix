@@ -39,8 +39,10 @@ let user = "thomas"; in
 
     defaults = {
       NSGlobalDomain = {
-        AppleShowAllExtensions = true;
+        AppleShowAllExtensions = false;
         ApplePressAndHoldEnabled = false;
+         _HIHideMenuBar = true;
+
 
         KeyRepeat = 2; # Values: 120, 90, 60, 30, 12, 6, 2
         InitialKeyRepeat = 15; # Values: 120, 94, 68, 35, 25, 15
@@ -51,7 +53,7 @@ let user = "thomas"; in
       };
 
       dock = {
-        autohide = false;
+        autohide = true;
         show-recents = false;
         launchanim = true;
         orientation = "bottom";
@@ -64,7 +66,6 @@ let user = "thomas"; in
 
       trackpad = {
         Clicking = true;
-        TrackpadThreeFingerDrag = true;
       };
     };
   };

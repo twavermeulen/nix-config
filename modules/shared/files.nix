@@ -16,4 +16,34 @@
   ".config/starship.toml" = {
     text = builtins.readFile ./config/starship.toml;
   };
+
+  ".config/sketchybar/sketchybarrc" = {
+    text = builtins.readFile ./config/sketchybar/sketchybarrc;
+    executable = true;
+  };
+
+  ".config/sketchybar/plugins/battery.sh" = {
+    text = builtins.readFile ./config/sketchybar/plugins/battery.sh;
+    executable = true;
+  };
+
+  ".config/sketchybar/plugins/clock.sh" = {
+    text = builtins.readFile ./config/sketchybar/plugins/clock.sh;
+    executable = true;
+  };
+
+  ".config/sketchybar/plugins/front_app.sh" = {
+    text = builtins.readFile ./config/sketchybar/plugins/front_app.sh;
+    executable = true;
+  };
+
+  ".config/sketchybar/plugins/space.sh" = {
+    text = builtins.readFile ./config/sketchybar/plugins/space.sh;
+    executable = true;
+  };
+
+  ".config/sketchybar/plugins/volume.sh" = {
+    text = builtins.readFile ./config/sketchybar/plugins/volume.sh;
+    executable = true;
+  };
 }
