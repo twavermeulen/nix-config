@@ -3,10 +3,10 @@ _:
 [
   # Development Tools
   "visual-studio-code"
-  # "sketchybar"
 
   # Productivity Tools
   "raycast"
+  "font-hack-nerd-font"
 
   # Browsers
   "brave-browser"
