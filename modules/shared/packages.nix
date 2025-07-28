@@ -3,12 +3,10 @@
 with pkgs; [
   # General packages for development and system management
   kitty
-  
+  sketchybar
   # Encryption and security tools
 
   # Cloud-related tools and SDKs
-  docker
-  docker-compose
 
   # Media-related packages
 
