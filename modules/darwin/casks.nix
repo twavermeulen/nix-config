@@ -2,9 +2,9 @@ _:
 
 [
   # Development Tools
-  "homebrew/cask/docker"
   "visual-studio-code"
-  
+  # "sketchybar"
+
   # Productivity Tools
   "raycast"
 
