@@ -4,8 +4,8 @@ let user = "thomas"; in
 
 {
   imports = [
-    ../../modules/darwin/home-manager.nix
-    ../../modules/shared
+    ../modules/darwin/home-manager.nix
+    ../modules/shared
   ];
 
   nix = {
@@ -30,7 +30,7 @@ let user = "thomas"; in
 
 
   environment.systemPackages = with pkgs; [
-  ] ++ (import ../../modules/shared/packages.nix { inherit pkgs; });
+  ] ++ (import ../modules/shared/packages.nix { inherit pkgs; });
   
   system = {
     checks.verifyNixPath = false;
