@@ -1,7 +1,13 @@
 { pkgs }:
 
-with pkgs;
-let shared-packages = import ../shared/packages.nix { inherit pkgs; }; in
-shared-packages ++ [
+with pkgs; [
+  # General packages for development and system management
+  kitty
   dockutil
+  
+  # Text and terminal utilities
+  starship
+  nerd-fonts.jetbrains-mono
+
+  # Add any other packages that were in shared/packages.nix
 ]

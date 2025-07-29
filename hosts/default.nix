@@ -5,7 +5,6 @@ let user = "thomas"; in
 {
   imports = [
     ../modules/darwin/home-manager.nix
-    ../modules/shared
   ];
 
   nix = {
@@ -27,11 +26,7 @@ let user = "thomas"; in
       experimental-features = nix-command flakes
     '';
   };
-
-
-  environment.systemPackages = with pkgs; [
-  ] ++ (import ../modules/shared/packages.nix { inherit pkgs; });
-  
+    
   system = {
     checks.verifyNixPath = false;
     primaryUser = user;
