@@ -9,6 +9,10 @@ in
   ".config/starship.toml" = {
     text = builtins.readFile ./files/starship/starship.toml;
   };
+  
+   ".config/kitty/gruvbox_dark.conf" = {
+      text = builtins.readFile ./files/kitty/gruvbox_dark.conf;
+   };
 
   ".config/sketchybar/sketchybarrc" = {
     text = builtins.readFile ./files/sketchybar/sketchybarrc;
