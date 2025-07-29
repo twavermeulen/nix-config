@@ -1,4 +1,3 @@
--config/modules/darwin/default.nix
 { config, pkgs, ... }:
 
 {

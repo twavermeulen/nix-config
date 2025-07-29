@@ -4,7 +4,7 @@ let user = "thomas"; in
 
 {
   imports = [
-    ../modules/darwin/home-manager.nix
+    ../modules/home-manager.nix
   ];
 
   nix = {
@@ -26,7 +26,7 @@ let user = "thomas"; in
       experimental-features = nix-command flakes
     '';
   };
-    
+
   system = {
     checks.verifyNixPath = false;
     primaryUser = user;
