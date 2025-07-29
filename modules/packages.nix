@@ -4,6 +4,7 @@ with pkgs; [
   # General packages for development and system management
   kitty
   dockutil
+  nerd-fonts.hack
   
   # Text and terminal utilities
   starship
