@@ -57,8 +57,10 @@ in
     enable = true;
     username = user;
     entries = [
-      { path = "/Applications/Safari.app/"; }
-      { path = "/System/Applications/System Settings.app/"; }
+      { path = "/Applications/Brave Browser.app/"; }
+      { path = "/Applications/Rider.app/"; }
+      { path = "/Applications/Discord.app/"; }
+      { path = "/Applications/Docker.app/"; }
     ];
   };
 }
