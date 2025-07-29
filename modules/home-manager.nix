@@ -25,7 +25,7 @@ in
     brews = pkgs.callPackage ./brews.nix {};
     masApps = import ./masApps.nix;
     
-    # onActivation.cleanup = "zap";
+#    onActivation.cleanup = "zap";
   };
 
   # Enable home-manager
@@ -58,8 +58,9 @@ in
     username = user;
     entries = [
       { path = "/Applications/Brave Browser.app/"; }
-      { path = "/Applications/Rider.app/"; }
       { path = "/Applications/Discord.app/"; }
+      { path = "/Applications/Microsoft Outlook.app/"; }
+      { path = "/Applications/Rider.app/"; }
       { path = "/Applications/Docker.app/"; }
     ];
   };

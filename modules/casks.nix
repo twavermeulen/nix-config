@@ -9,5 +9,4 @@ _:
   "proton-pass"
   "brave-browser"
   "discord"
-
 ]
