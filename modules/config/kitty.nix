@@ -7,5 +7,6 @@
       name = "JetBrainsMono Nerd Font";
       size = 12;
     };
+    themeFile = "Gruvbox Dark Hard";
   };
 }
