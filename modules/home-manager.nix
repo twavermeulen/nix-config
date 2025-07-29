@@ -22,14 +22,10 @@ in
   homebrew = {
     enable = true;
     casks = pkgs.callPackage ./casks.nix {};
-    brews = [
-      "sketchybar"
-    ];
-    onActivation.cleanup = "zap";
-
-    masApps = {
-      # "wireguard" = 1451685025;
-    };
+    brews = pkgs.callPackage ./brews.nix {};
+    masApps = import ./masApps.nix;
+    
+    # onActivation.cleanup = "zap";
   };
 
   # Enable home-manager
