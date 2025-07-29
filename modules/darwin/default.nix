@@ -1,7 +1,7 @@
+-config/modules/darwin/default.nix
 { config, pkgs, ... }:
 
 {
-
   nixpkgs = {
     config = {
       allowUnfree = true;

@@ -2,8 +2,8 @@
 
 let
   user = "thomas";
-  # Define the content of your file as a derivation
-  sharedFiles = import ../shared/files.nix { inherit config pkgs; };
+  name = "thomas";
+  email = "twa.vermeulen@student.avans.nl";
   additionalFiles = import ./files.nix { inherit user config pkgs; };
 in
 {
@@ -27,16 +27,6 @@ in
     ];
     onActivation.cleanup = "zap";
 
-    # These app IDs are from using the mas CLI app
-    # mas = mac app store
-    # https://github.com/mas-cli/mas
-    #
-    # $ nix shell nixpkgs#mas
-    # $ mas search <app name>
-    #
-    # If you have previously added these apps to your Mac App Store profile (but not installed them on this system),
-    # you may receive an error message "Redownload Unavailable with This Apple ID".
-    # This message is safe to ignore. (https://github.com/dustinlyons/nixos-config/issues/83)
     masApps = {
       # "wireguard" = 1451685025;
     };
@@ -49,13 +39,74 @@ in
       home = {
         enableNixpkgsReleaseCheck = false;
         packages = pkgs.callPackage ./packages.nix {};
-        file = lib.mkMerge [
-          sharedFiles
-          additionalFiles
-        ];
+        file = additionalFiles;
         stateVersion = "23.11";
       };
-      programs = {} // import ../shared/home-manager.nix { inherit config pkgs lib; };
+      
+      programs = {
+        kitty = {
+          enable = true;
+          font = {
+            name = "JetBrainsMono Nerd Font";
+            size = 12;
+          };
+        };
+
+        starship = {
+          enable = true;
+          enableZshIntegration = true;
+        };
+
+        zsh = {
+          enable = true;
+          autocd = false;
+          plugins = [ ];
+          initContent = lib.mkBefore ''
+            if [[ -f /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]]; then
+              . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+              . /nix/var/nix/profiles/default/etc/profile.d/nix.sh
+            fi
+
+            # Define variables for directories
+            export PATH=$HOME/.pnpm-packages/bin:$HOME/.pnpm-packages:$PATH
+            export PATH=$HOME/.npm-packages/bin:$HOME/bin:$PATH
+            export PATH=$HOME/.local/share/bin:$PATH
+
+            # Remove history data we don't want to see
+            export HISTIGNORE="pwd:ls:cd"
+
+            # nix shortcuts
+            shell() {
+                nix-shell '<nixpkgs>' -A "$1"
+            }
+
+            # Use difftastic, syntax-aware diffing
+            alias diff=difft
+
+            # Always color ls and group directories
+            alias ls='ls --color=auto'
+          '';
+        };
+
+        git = {
+          enable = true;
+          ignores = [ "*.swp" ];
+          userName = name;
+          userEmail = email;
+          lfs = {
+            enable = true;
+          };
+          extraConfig = {
+            init.defaultBranch = "main";
+            core = {
+              editor = "vim";
+              autocrlf = "input";
+            };
+            pull.rebase = true;
+            rebase.autoStash = true;
+          };
+        };
+      };
 
       # Marked broken Oct 20, 2022 check later to remove this
       # https://github.com/nix-community/home-manager/issues/3344
@@ -72,5 +123,4 @@ in
       { path = "/System/Applications/System Settings.app/"; }
     ];
   };
-
 }
