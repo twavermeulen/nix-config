@@ -9,4 +9,5 @@ _:
   "proton-pass"
   "brave-browser"
   "discord"
+  "microsoft-teams"
 ]

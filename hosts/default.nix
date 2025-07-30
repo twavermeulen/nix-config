@@ -62,6 +62,7 @@ let user = "thomas"; in
       trackpad = {
         Clicking = true;
       };
+    
     };
   };
 }

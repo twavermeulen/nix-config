@@ -25,7 +25,7 @@ in
     brews = pkgs.callPackage ./brews.nix {};
     masApps = import ./masApps.nix;
     
-#    onActivation.cleanup = "zap";
+#    onActivation.cleanup = "uninstall";
   };
 
   # Enable home-manager
