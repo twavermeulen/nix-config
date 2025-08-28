@@ -10,4 +10,5 @@ _:
   "brave-browser"
   "discord"
   "microsoft-teams"
+  "anaconda"
 ]
