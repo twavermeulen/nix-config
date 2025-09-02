@@ -11,4 +11,7 @@ _:
   "discord"
   "microsoft-teams"
   "anaconda"
+  "moonlight"
+  "pycharm"
+  "stats"
 ]
