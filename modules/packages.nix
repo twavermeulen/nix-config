@@ -5,7 +5,6 @@ with pkgs; [
   starship
   fastfetch
   kitty
-  
   nerd-fonts.hack
   nerd-fonts.jetbrains-mono
 ]

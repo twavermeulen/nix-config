@@ -10,8 +10,9 @@ _:
   "brave-browser"
   "discord"
   "microsoft-teams"
-  "anaconda"
-  "moonlight"
   "pycharm"
   "stats"
+  "postman"
+  "drawio"
+  "miniforge"
 ]

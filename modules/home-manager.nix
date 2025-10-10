@@ -61,6 +61,7 @@ in
       { path = "/Applications/Discord.app/"; }
       { path = "/Applications/Microsoft Outlook.app/"; }
       { path = "/Applications/Rider.app/"; }
+      { path = "/Applications/PyCharm.app/"; }
       { path = "/Applications/Docker.app/"; }
     ];
   };
